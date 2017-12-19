@@ -15,6 +15,6 @@ class Card
 
 end
 
-card = Card.new("What is the capital of Alaska?", "Juneau")
-p card.question
-p card.answer
+#card = Card.new("What is the capital of Alaska?", "Juneau")
+#p card.question
+#p card.answer
