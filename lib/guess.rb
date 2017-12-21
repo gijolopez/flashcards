@@ -2,21 +2,29 @@ require './lib/card'
 
 class Guess
 
-  attr_reader :guess,
+  attr_reader :response,
               :card
 
-  def initialize(guess, card, correct = true)
-    @guess = guess
-    @card = card
-    @correct = correct
+  def initialize(response, card)
+      @response    = response
+      @card        = card
   end
 
-  def response
-    @answer
+  def correct?
+    if @response == @card.answer
+      true
+    else
+      false
+    end
   end
+
+  def feedback
+    if @response == @card.answer
+      return "Correct!"
+    else
+      "Incorrect!"
+    end
+  end
+
 
 end
-
-#card = Card.new("What is the capital of Alaska?", "Juneau")
-#guess = Guess.new("Juneau")
-#p guess.card
