@@ -21,10 +21,8 @@ class GuessTest < Minitest::Test
   def test_response
     card   = Card.new("What is the capital of Alaska?", "Juneau")
     guess  = Guess.new("Juneau", card)
-    guess1 = Guess.new("George", card)
 
     assert_equal "Juneau", guess.response
-    assert_equal "George", guess1.response
   end
 
   def test_correct?
@@ -63,6 +61,4 @@ class GuessTest < Minitest::Test
     assert_equal "Incorrect!" , guess.feedback
   end
 
-
-  
 end
