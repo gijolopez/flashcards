@@ -2,11 +2,13 @@ require './lib/card'
 
 class Guess
   attr_reader :response,
-              :card
+              :card,
+              :feedback
 
   def initialize(response, card)
       @response    = response
       @card        = card
+      @feedback   = feedback
   end
 
   def correct?
@@ -24,6 +26,4 @@ class Guess
       "Incorrect!"
     end
   end
-
-
 end

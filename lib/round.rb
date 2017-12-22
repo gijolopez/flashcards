@@ -3,11 +3,14 @@ require './lib/guess'
 require './lib/deck'
 
 class Round
-  attr_reader :deck, :guesses
+  attr_reader :deck,
+              :guesses,
+              :feedback
 
   def initialize(deck)
     @deck = deck
     @guesses = []
+
   end
 
   def current_card
@@ -17,6 +20,9 @@ class Round
   def record_guess(guess)
     guess_1 = Guess.new(guess, current_card)
     @guesses << guess_1
-    guess_1 
+    guess_1
+  end
+
+  def number_correct
   end
 end
